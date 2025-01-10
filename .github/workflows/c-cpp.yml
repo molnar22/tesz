@@ -43,6 +43,6 @@ jobs:
          ls
          ls ./oclint-24.11/bin
          chmod +x ./oclint-24.11/bin/oclint
-         ./oclint-24.11/bin/oclint      
+         ./oclint-24.11/bin/oclint main.c -- -c    
       shell: bash
       

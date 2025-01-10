@@ -34,4 +34,12 @@ jobs:
          alias pmd="./pmd-bin-7.9.0/bin/pmd"
          ./pmd-bin-7.9.0/bin/pmd check -d /usr/src -R rulesets/java/quickstart.xml -f text
       shell: bash
+    - name: Run oclint
+      run: |
+         cd .
+         wget https://github.com/oclint/oclint/releases/download/v24.11/oclint-24.11-llvm-16.0.4-x86_64-linux-ubuntu-24.04.tar.gz
+         unzip oclint-24.11-llvm-16.0.4-x86_64-linux-ubuntu-24.04.tar.gz
+         ls
+         ls oclint-24.11-llvm-16.0.4-x86_64-linux-ubuntu-24.04
+      shell: bash
       

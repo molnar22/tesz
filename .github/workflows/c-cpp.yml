@@ -52,6 +52,7 @@ jobs:
          sudo cp ./oclint-24.11/bin/oclint* /usr/local/bin/
          sudo cp -rp ./oclint-24.11/lib/* /usr/local/lib/
          # sudo cp -rp ./oclint-24.11/include/* /usr/local/include/
+         sudo ldconfig /oclint-24.11/lib/
          oclint main.c -- -c
       shell: bash
       

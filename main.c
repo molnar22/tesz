@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+int grantAccess(char* username);
+
+void privilegedAction();
+
 int grantAccess(char* username) {
     printf("%s\n", username);
     return 1;

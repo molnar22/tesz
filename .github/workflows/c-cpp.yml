@@ -41,6 +41,9 @@ jobs:
          ls
          tar -xvf ./oclint-24.11-llvm-16.0.4-x86_64-linux-ubuntu-24.04.tar.gz
          ls
-         ls oclint-24.11-llvm-16.0.4-x86_64-linux-ubuntu-24.04
+         ls ./oclint-24.11/bin
+         chmod +x ./oclint-24.11/bin/oclint
+         CURRENT_PATH=`pwd`
+         echo "$CURRENT_PATH"
       shell: bash
       

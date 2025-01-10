@@ -25,6 +25,7 @@ jobs:
       with:
        args: >
          --define sonar.cfamily.compile-commands="./compile_commands.json"
+# No c support
 #    - name: Run PMD
 #      run: |
 #         cd .
@@ -50,7 +51,7 @@ jobs:
          #./oclint-24.11/bin/oclint main.c -- -c
          sudo cp ./oclint-24.11/bin/oclint* /usr/local/bin/
          sudo cp -rp ./oclint-24.11/lib/* /usr/local/lib/
-         sudo cp -rp ./oclint-24.11/include/* /usr/local/include/
+         # sudo cp -rp ./oclint-24.11/include/* /usr/local/include/
          oclint main.c -- -c
       shell: bash
       

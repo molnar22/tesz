@@ -30,7 +30,8 @@ jobs:
          cd .
          wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.9.0/pmd-dist-7.9.0-bin.zip
          unzip pmd-dist-7.9.0-bin.zip
+         ls ./pmd-bin-7.9.0/bin
          alias pmd="./pmd-bin-7.9.0/bin/pmd"
-         pmd check -d /usr/src -R rulesets/java/quickstart.xml -f text
+         ./pmd-bin-7.9.0/bin/pmd check -d /usr/src -R rulesets/java/quickstart.xml -f text
       shell: bash
       

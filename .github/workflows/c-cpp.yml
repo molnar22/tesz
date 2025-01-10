@@ -17,11 +17,11 @@ jobs:
       uses: SonarSource/sonarqube-scan-action/install-build-wrapper@v4
     - name: Run Build Wrapper
       run: |
-       build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} gcc main.c
+       build-wrapper-linux-x86-64 --out-dir . gcc main.c
     - name: SonarQube Scan
       uses: SonarSource/sonarqube-scan-action@v4
       env:
        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
        args: >
-         --define sonar.cfamily.compile-commands="${{ env.BUILD_WRAPPER_OUT_DIR }}/compile_commands.json"
+         --define sonar.cfamily.compile-commands="./compile_commands.json"

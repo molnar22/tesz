@@ -43,10 +43,13 @@ jobs:
          ls
          ls ./oclint-24.11/bin
          chmod +x ./oclint-24.11/bin/oclint
-         # ldconfig /home/runner/workldconfig /tesz/tesz/./oclint-24.11/lib/oclint/rules/libUnusedLocalVariableRule.so
-         sudo ldconfig /home/runner/workldconfig /tesz/tesz/./oclint-24.11/lib/
-         sudo ldconfig /home/runner/workldconfig /tesz/tesz/./oclint-24.11/lib/oclint/
-         sudo ldconfig /home/runner/workldconfig /tesz/tesz/./oclint-24.11/lib/oclint/rules/
-         ./oclint-24.11/bin/oclint main.c -- -c    
+         # ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/oclint/rules/libUnusedLocalVariableRule.so
+         sudo ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/
+         sudo ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/oclint/
+         sudo ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/oclint/rules/
+         ./oclint-24.11/bin/oclint main.c -- -c
+         #cp bin/oclint* /usr/local/bin/
+         #cp -rp lib/* /usr/local/lib/
+         #cp -rp include/* /usr/local/include/
       shell: bash
       

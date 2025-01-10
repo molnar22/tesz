@@ -1,3 +1,6 @@
+/*
+* Wata f license (R) , use if you want
+*/
 #include <stdio.h>
 
 int grantAccess(char* username);

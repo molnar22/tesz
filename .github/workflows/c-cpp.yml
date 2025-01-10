@@ -43,7 +43,9 @@ jobs:
          ls
          ls ./oclint-24.11/bin
          chmod +x ./oclint-24.11/bin/oclint
-         CURRENT_PATH=`pwd`
-         echo "$CURRENT_PATH"
+         CURRENT_PATH=`pwd` #/home/runner/work/tesz/tesz
+         OCLINT_HOME="$CURRENT_PATH/oclint-24.11/bin"
+         export PATH=$OCLINT_HOME/bin:$PATH
+         oclint
       shell: bash
       

@@ -48,9 +48,9 @@ jobs:
          # sudo ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/oclint/
          # sudo ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/oclint/rules/
          #./oclint-24.11/bin/oclint main.c -- -c
-         cp ./oclint-24.11/bin/oclint* /usr/local/bin/
-         cp -rp ./oclint-24.11/lib/* /usr/local/lib/
-         cp -rp ./oclint-24.11/include/* /usr/local/include/
+         sudo cp ./oclint-24.11/bin/oclint* /usr/local/bin/
+         sudo cp -rp ./oclint-24.11/lib/* /usr/local/lib/
+         sudo cp -rp ./oclint-24.11/include/* /usr/local/include/
          oclint main.c -- -c
       shell: bash
       

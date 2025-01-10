@@ -35,24 +35,25 @@ jobs:
 #         alias pmd="./pmd-bin-7.9.0/bin/pmd"
 #         ./pmd-bin-7.9.0/bin/pmd check -d /usr/src -R rulesets/java/quickstart.xml -f text
 #      shell: bash
-    - name: Run oclint
-      run: |
-         cd .
-         wget https://github.com/oclint/oclint/releases/download/v24.11/oclint-24.11-llvm-16.0.4-x86_64-linux-ubuntu-24.04.tar.gz
-         ls
-         tar -xvf ./oclint-24.11-llvm-16.0.4-x86_64-linux-ubuntu-24.04.tar.gz
-         ls
-         ls ./oclint-24.11/bin
-         chmod +x ./oclint-24.11/bin/oclint
-         # ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/oclint/rules/libUnusedLocalVariableRule.so
-         # sudo ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/
-         # sudo ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/oclint/
-         # sudo ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/oclint/rules/
-         #./oclint-24.11/bin/oclint main.c -- -c
-         sudo cp ./oclint-24.11/bin/oclint* /usr/local/bin/
-         sudo cp -rp ./oclint-24.11/lib/* /usr/local/lib/
-         # sudo cp -rp ./oclint-24.11/include/* /usr/local/include/
-         sudo ldconfig /oclint-24.11/lib/
-         oclint main.c -- -c
-      shell: bash
+# Configuration problem
+#    - name: Run oclint
+#      run: |
+#         cd .
+#         wget https://github.com/oclint/oclint/releases/download/v24.11/oclint-24.11-llvm-16.0.4-x86_64-linux-ubuntu-24.04.tar.gz
+#         ls
+#         tar -xvf ./oclint-24.11-llvm-16.0.4-x86_64-linux-ubuntu-24.04.tar.gz
+#         ls
+#         ls ./oclint-24.11/bin
+#         chmod +x ./oclint-24.11/bin/oclint
+#         # ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/oclint/rules/libUnusedLocalVariableRule.so
+#         # sudo ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/
+#         # sudo ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/oclint/
+#         # sudo ldconfig /home/runner/work/tesz/tesz/./oclint-24.11/lib/oclint/rules/
+#         #./oclint-24.11/bin/oclint main.c -- -c
+#         sudo cp ./oclint-24.11/bin/oclint* /usr/local/bin/
+#         sudo cp -rp ./oclint-24.11/lib/* /usr/local/lib/
+#         # sudo cp -rp ./oclint-24.11/include/* /usr/local/include/
+#         sudo ldconfig /oclint-24.11/lib/
+#         oclint main.c -- -c
+#      shell: bash
       

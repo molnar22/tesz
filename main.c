@@ -18,7 +18,7 @@ int main () {
     int allow = 0;
     int notallowe;
     int mallow = 9;
-    printf external link("Enter your username, please: ");
+    printf("Enter your username, please: ");
     gets(username); 
     if (grantAccess(username)) {
         allow = 1;

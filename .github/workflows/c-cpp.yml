@@ -27,10 +27,10 @@ jobs:
          --define sonar.cfamily.compile-commands="./compile_commands.json"
     - name: Run PMD
       run: |
-         cd $HOME
+         cd .
          wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.9.0/pmd-dist-7.9.0-bin.zip
          unzip pmd-dist-7.9.0-bin.zip
-         alias pmd="$HOME/pmd-bin-7.9.0/bin/pmd"
+         alias pmd="./pmd-bin-7.9.0/bin/pmd"
          pmd check -d /usr/src -R rulesets/java/quickstart.xml -f text
       shell: bash
       

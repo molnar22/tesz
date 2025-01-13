@@ -1,0 +1,11 @@
+main.c:25:5: warning: Obsolete function 'gets' called. It is recommended to use 'fgets' or 'gets_s' instead. [getsCalled]
+    gets(username);
+    ^
+main.c:23:16: style: Variable 'mallow' is assigned a value that is never used. [unreadVariable]
+    int mallow = 9;
+               ^
+main.c:22:9: style: Unused variable: notallowe [unusedVariable]
+    int notallowe;
+        ^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+

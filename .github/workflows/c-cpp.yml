@@ -99,9 +99,14 @@ jobs:
 #        cpachecker ./main.c
 #      shell: bash
 # Install problem
-    - name: Run cppcheck
+#    - name: Run cppcheck
+#      run: |
+#        sudo apt update
+#        sudo apt-get install cppcheck
+#        cppcheck ./main.c
+#      shell: bash
+    - name: Run cpplint
       run: |
-        sudo apt update
-        sudo apt-get install cppcheck
-        cppcheck ./main.c
-      shell: bash      
+        pip install cpplint
+        cpplint ./main.c
+      shell: bash 

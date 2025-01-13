@@ -112,10 +112,17 @@ jobs:
 #        cpplint --help
 #        cpplint ./main.c
 #      shell: bash
-    - name: Run Frama-C
+# Install problem
+#    - name: Run Frama-C
+#      run: |
+#        sudo apt install opam
+#        opam init --compiler 4.14.1
+#        eval $(opam env)
+#        opam install frama-c
+#      shell: bash
+# Splint
+    - name: Run Splint
       run: |
-        sudo apt install opam
-        opam init --compiler 4.14.1
-        eval $(opam env)
-        opam install frama-c
-      shell: bash 
+        brew install splint
+      shell: bash
+      

@@ -91,8 +91,8 @@ jobs:
     - name: Run cpachecker
       run: |
         sudo mkdir -p /etc/apt/keyrings/
-        sudo wget -q -O - https://apt.sosy-lab.org/gpg.key | gpg --dearmor > /etc/apt/keyrings/sosy-lab.gpg
-        sudo echo "deb [signed-by=/etc/apt/keyrings/sosy-lab.gpg] https://apt.sosy-lab.org stable main" | tee /etc/apt/sources.list.d/sosy-lab.list
+        sudo wget -q -O - https://apt.sosy-lab.org/gpg.key | gpg --dearmor > /tmp/sosy-lab.gpg
+        sudo echo "deb [signed-by=/tmp/sosy-lab.gpg] https://apt.sosy-lab.org stable main" | tee /etc/apt/sources.list.d/sosy-lab.list
         sudo apt update
         sudo apt-get install cpachecker
         cpachecker ./main.c

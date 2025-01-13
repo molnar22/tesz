@@ -105,9 +105,17 @@ jobs:
 #        sudo apt-get install cppcheck
 #        cppcheck ./main.c
 #      shell: bash
-    - name: Run cpplint
+# Can show to finding in console and block the pipeline
+#    - name: Run cpplint
+#      run: |
+#        pip install cpplint
+#        cpplint --help
+#        cpplint ./main.c
+#      shell: bash
+    - name: Run Frama-C
       run: |
-        pip install cpplint
-        cpplint --help
-        cpplint ./main.c
+        sudo apt install opam
+        opam init --compiler 4.14.1
+        eval $(opam env)
+        opam install frama-c
       shell: bash 

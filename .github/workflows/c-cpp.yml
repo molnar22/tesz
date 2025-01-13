@@ -108,5 +108,6 @@ jobs:
     - name: Run cpplint
       run: |
         pip install cpplint
+        cpplint --help
         cpplint ./main.c
       shell: bash 

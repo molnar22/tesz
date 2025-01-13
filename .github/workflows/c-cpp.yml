@@ -79,12 +79,22 @@ jobs:
 #         sudo apt install clang-format-13
 #         sudo apt install clang-tidy-13
 #      shell: bash
+# Install done but tool did not work (wrong config)
+#    - name: Run clang-tidy
+#      run: |
+#         sudo pip install clang-tidy
+#         pip install clang-tidy
+#         ls
+#         # clang-tidy -checks=-*,clang-analyzer-*,-clang-analyzer-cplusplus* main.c --
+#         clang-tidy --header-filter=* ./main.c
+#      shell: bash
     - name: Run clang-tidy
       run: |
-         sudo pip install clang-tidy
-         pip install clang-tidy
-         ls
-         # clang-tidy -checks=-*,clang-analyzer-*,-clang-analyzer-cplusplus* main.c --
-         clang-tidy --header-filter=* ./main.c
+        sudo mkdir -p /etc/apt/keyrings/
+        sudo wget -q -O - https://apt.sosy-lab.org/gpg.key | gpg --dearmor > /etc/apt/keyrings/sosy-lab.gpg
+        sudo echo "deb [signed-by=/etc/apt/keyrings/sosy-lab.gpg] https://apt.sosy-lab.org stable main" | tee /etc/apt/sources.list.d/sosy-lab.list
+        sudo apt update
+        sudo apt-get install cpachecker
+        cpachecker ./main.c
       shell: bash
       

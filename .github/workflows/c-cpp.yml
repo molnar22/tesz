@@ -68,14 +68,19 @@ jobs:
 #         sudo ldconfig /oclint-24.11/lib/
 #         oclint main.c -- -c
 #      shell: bash
-    - name: Run PMD
+# This install-description does not work
+#    - name: Run clang-tidy
+#      run: |
+#         sudo add-apt-repository 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
+#         cat /etc/apt/sources.list
+#         wget https://apt.llvm.org/llvm-snapshot.gpg.key
+#         sudo apt-key add llvm-snapshot.gpg.key
+#         sudo apt update
+#         sudo apt install clang-format-13
+#         sudo apt install clang-tidy-13
+#      shell: bash
+    - name: Run clang-tidy
       run: |
-         sudo add-apt-repository 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
-         cat /etc/apt/sources.list
-         wget https://apt.llvm.org/llvm-snapshot.gpg.key
-         sudo apt-key add llvm-snapshot.gpg.key
-         sudo apt update
-         sudo apt install clang-format-13
-         sudo apt install clang-tidy-13
+         sudo pip install clang-tidy
       shell: bash
       

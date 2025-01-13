@@ -120,9 +120,9 @@ jobs:
 #        eval $(opam env)
 #        opam install frama-c
 #      shell: bash
-# Splint
-    - name: Run Splint
-      run: |
-        brew install splint
-      shell: bash
+# Splint - brew install needed
+#    - name: Run Splint
+#      run: |
+#        brew install splint
+#      shell: bash
       

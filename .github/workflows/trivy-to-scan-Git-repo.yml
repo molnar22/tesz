@@ -23,8 +23,8 @@ jobs:
           ignore-unfixed: true
 #          format: 'sarif'
           format: table
-#          scan-ref: .
-          scan-ref: /
+          scan-ref: .
+#          scan-ref: /
           output: 'trivy-results.sarif'
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
 

@@ -98,4 +98,10 @@ jobs:
 #        sudo apt-get install cpachecker
 #        cpachecker ./main.c
 #      shell: bash
-      
+#
+    - name: Run cppcheck
+      run: |
+        sudo apt update
+        sudo apt-get install cppcheck
+        cppcheck ./main.c
+      shell: bash      

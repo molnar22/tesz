@@ -83,6 +83,7 @@ jobs:
       run: |
          sudo pip install clang-tidy
          pip install clang-tidy
+         ls
          clang-tidy main.c -checks=-*
       shell: bash
       

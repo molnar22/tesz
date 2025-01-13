@@ -85,6 +85,6 @@ jobs:
          pip install clang-tidy
          ls
          # clang-tidy -checks=-*,clang-analyzer-*,-clang-analyzer-cplusplus* main.c --
-         clang-tidy ./main.c
+         clang-tidy --exclude-header-filte=* ./main.c
       shell: bash
       
